@@ -1,4 +1,4 @@
 export const siteConfig = {
-    name: "Taskify",
-    description: "Collaborate, manage projects, and reach new productivity peaks",
+    name: "IPE Tobacco Tax Country Profiles",
+    description: "Country-wide tax data and scenarios for selected countries",
   };

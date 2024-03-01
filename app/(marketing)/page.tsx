@@ -1,8 +1,7 @@
 import Link from "next/link";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
-import { Medal } from "lucide-react";
-
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -32,28 +31,22 @@ const MarketingPage = () => {
         "flex items-center justify-center flex-col",
         headingFont.className,
       )}>
-        <div className="mb-4 flex items-center border shadow-sm p-4 bg-amber-100 text-amber-700 rounded-full uppercase">
-          <Medal className="h-6 w-6 mr-2" />
-          No 1 task managment
+        <div className="mb-12 mt-28 sm:mt-16 flex flex-col items-center justify-center text-center">
+        <h1 className='max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl'>
+            <span className='text-[#FF3366]'>Taxing Tobacco:</span>{' '}
+            Tax plans for a smoke-free world.
+          </h1>
         </div>
-        <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
-          Taskify helps teams move
-        </h1>
-        <div className="text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md pb-4 w-fit">
-          work forward.
-        </div>
+        <p className='mt-5 max-w-prose text-700 sm:text-lg'>
+            <span> Country-specific tax plans and country profiles, ready-made for engaging with political decision makers</span>.
+          </p>
       </div>
-      <div className={cn(
-        "text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
-        textFont.className,
-      )}>
-        Collaborate, manage projects, and reach new productivity peaks. From high rises to the home office, the way your team works is unique - accomplish it all with Taskify.
-      </div>
-      <Button className="mt-6" size="lg" asChild>
-        <Link href="/auth/select-org">
-          Create your Team
-        </Link>
-      </Button>
+      <Image className="opacity-80"
+          src= "/ipe-solution-business-optimization-rgb.png"  
+          width={2084}
+          height={959}
+          alt="IPE Business Solutions"
+        />
     </div>
   );
 };
