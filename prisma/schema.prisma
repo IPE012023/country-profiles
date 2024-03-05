@@ -117,15 +117,6 @@ model Product {
   yearlyData ProductYearData[] // Relation to ProductYearData
 }
 
-model ProductYearData {
-  id        String  @id @default(cuid())
-  productId String // Foreign key to relate to Product
-  year      Int
-  RSP       Float
-  ETY       Float
-  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
-}
-
 model Index {
   id         String          @id @default(cuid())
   countryId  String // Foreign key
@@ -134,13 +125,6 @@ model Index {
   yearlyData IndexYearData[] // Relation to IndexYearData
 }
 
-model IndexYearData {
-  id      String @id @default(cuid())
-  indexId String // Foreign key to relate to Index
-  year    Int
-  value   Float
-  index   Index  @relation(fields: [indexId], references: [id], onDelete: Cascade)
-}
 
 model VAT {
   id            String        @id @default(cuid())
@@ -150,11 +134,34 @@ model VAT {
   yearlyVATData VATYearData[] // Relation to VATYearData
 }
 
-model VATYearData {
-  id        String @id @default(cuid())
-  vatId     String // Foreign key to relate to Index
+model ProductYearData {
+  id        String  @id @default(cuid())
+  productId String
   year      Int
+  RSP       Float
+  ETY       Float
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@unique([productId, year])
+}
+
+model IndexYearData {
+  id      String @id @default(cuid())
+  indexId String
+  year    Int
+  value   Float
+  index   Index  @relation(fields: [indexId], references: [id])
+
+  @@unique([indexId, year])
+}
+
+model VATYearData {
+  id      String @id @default(cuid())
+  vatId   String
+  year    Int
   nom_value Float
   eff_value Float
-  vat       VAT    @relation(fields: [vatId], references: [id], onDelete: Cascade)
+  vat     VAT    @relation(fields: [vatId], references: [id])
+
+  @@unique([vatId, year])
 }
