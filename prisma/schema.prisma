@@ -100,3 +100,61 @@ model TwoFactorConfirmation {
 
   @@unique([userId])
 }
+
+model Country {
+  countryId   String    @id
+  countryName String
+  products    Product[] // Relation to Product
+  indizes     Index[] // Relation to Index
+  VAT         VAT[] // Relation to VAT
+}
+
+model Product {
+  id         String            @id @default(cuid())
+  countryId  String // Foreign key
+  name       String
+  country    Country           @relation(fields: [countryId], references: [countryId], onDelete: Cascade)
+  yearlyData ProductYearData[] // Relation to ProductYearData
+}
+
+model ProductYearData {
+  id        String  @id @default(cuid())
+  productId String // Foreign key to relate to Product
+  year      Int
+  RSP       Float
+  ETY       Float
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Index {
+  id         String          @id @default(cuid())
+  countryId  String // Foreign key
+  name       String
+  country    Country         @relation(fields: [countryId], references: [countryId], onDelete: Cascade)
+  yearlyData IndexYearData[] // Relation to IndexYearData
+}
+
+model IndexYearData {
+  id      String @id @default(cuid())
+  indexId String // Foreign key to relate to Index
+  year    Int
+  value   Float
+  index   Index  @relation(fields: [indexId], references: [id], onDelete: Cascade)
+}
+
+model VAT {
+  id            String        @id @default(cuid())
+  countryId     String // Foreign key
+  name          String
+  country       Country       @relation(fields: [countryId], references: [countryId], onDelete: Cascade)
+  yearlyVATData VATYearData[] // Relation to VATYearData
+}
+
+model VATYearData {
+  id        String @id @default(cuid())
+  vatId     String // Foreign key to relate to Index
+  year      Int
+  nom_value Float
+  eff_value Float
+  vat       VAT    @relation(fields: [vatId], references: [id], onDelete: Cascade)
+}

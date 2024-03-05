@@ -1,0 +1,97 @@
+{
+  "Country": [
+    {
+      "countryId": "south-korea",
+      "countryName": "South Korea"
+    }
+  ],
+  "Products": [
+    {
+      "id": "HTP-south-korea",
+      "countryId": "south-korea",
+      "name": "HTP",
+      "yearlyData": [
+        {
+          "year": 2021,
+          "RSP": 1000.0,
+          "ETY": 800.0
+        },
+        {
+          "year": 2022,
+          "RSP": 1100.0,
+          "ETY": 850.0
+        }
+      ]
+    },
+    {
+      "id": "CC-south-korea",
+      "countryId": "south-korea",
+      "name": "CC",
+      "yearlyData": [
+        {
+          "year": 2021,
+          "RSP": 1500.0,
+          "ETY": 1200.0
+        },
+        {
+          "year": 2022,
+          "RSP": 1600.0,
+          "ETY": 1250.0
+        }
+      ]
+    }
+  ],
+  "Indexes": [
+    {
+      "id": "CPI-south-korea",
+      "countryId": "south-korea",
+      "name": "CPI",
+      "yearlyData": [
+        {
+          "year": 2021,
+          "value": 2.5
+        },
+        {
+          "year": 2022,
+          "value": 2.7
+        }
+      ]
+    },
+    {
+      "id": "PPI-south-korea",
+      "countryId": "south-korea",
+      "name": "PPI",
+      "yearlyData": [
+        {
+          "year": 2021,
+          "value": 3.0
+        },
+        {
+          "year": 2022,
+          "value": 3.2
+        }
+      ]
+    }
+  ],
+  "VAT": [
+    {
+      "id": "VAT-south-korea",
+      "countryId": "south-korea",
+      "name": "Nominal and Effective VAT",
+      "yearlyVATData": [
+        {
+          "year": 2021,
+          "nom_value": 10.0,
+          "eff_value": 9.5
+        },
+
+        {
+            "year": 2022,
+            "nom_value": 11.0,
+            "eff_value": 10.5
+          }
+      ]
+    }
+  ]
+
+}
