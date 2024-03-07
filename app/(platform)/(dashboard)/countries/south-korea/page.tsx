@@ -87,17 +87,17 @@ const CountryProfilePage = () => {
       {/* Grids for Charts and Tables */}
       <div className="w-full grid grid-cols-3 gap-4 p-10">
         {/* Chart 1 */}
-        <div className="bg-slate-600 p-4 text-center text-white">
+        <div className="bg-white p-4 text-center text-white">
           <Line data={chartData} options={{ responsive: true, plugins: { legend: { position: 'top' }, title: { display: true, text: 'Chart Title 1' } } }} />
         </div>
         
         {/* Chart 2 */}
-        <div className="bg-slate-600 p-4 text-center text-white">
+        <div className="bg-white p-4 text-center text-white">
           <Line data={chartData} options={{ responsive: true, plugins: { legend: { position: 'top' }, title: { display: true, text: 'Chart Title 2' } } }} />
         </div>
         
         {/* Chart 3 */}
-        <div className="bg-slate-600 p-4 text-center text-white">
+        <div className="bg-white p-4 text-center text-white">
           <Line data={chartData} options={{ responsive: true, plugins: { legend: { position: 'top' }, title: { display: true, text: 'Chart Title 3' } } }} />
         </div>
 
