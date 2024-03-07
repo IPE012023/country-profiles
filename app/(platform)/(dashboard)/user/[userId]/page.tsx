@@ -19,9 +19,6 @@ const UserIdPage = () => {
       <Button size="sm" asChild>
           <Link href="/countries/south-korea">South Korea</Link>
         </Button>
-      <Button variant="default" onClick={onClick}>
-        Logout
-      </Button>
     </div>
   );
 };

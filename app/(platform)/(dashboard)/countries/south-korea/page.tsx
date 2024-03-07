@@ -23,7 +23,7 @@ ChartJS.register(
 );
 
 const CountryProfilePage = () => {
-  const countryName = "Tax Indexation in the Repbublic of Korea"; // You can make this dynamic
+  const countryName = "Tax Indexation in the Republic of Korea"; // You can make this dynamic
   const message = "Key Highlights of the Project"; // Example message
 
   // Mock data for the charts
